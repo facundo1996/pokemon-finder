@@ -8,10 +8,11 @@ class PokeCard extends React.Component {
 
 	render(){
 		return <div className='col-3'>
-				<div className=''>
-					
-				</div>
+			<div className=''>
+				<img src={this.props.pokemon.sprites.front_default} alt="" />
+				{this.props.pokemon.name}
 			</div>
+		</div>
 	}
 	
 

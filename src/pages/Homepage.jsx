@@ -16,12 +16,6 @@ class Homepage extends React.Component {
 			<div className='container'>
 				<h1 className='title-homepage'>Pokemon Finder</h1>
 				<h3 className='subtitle-homepage my-4'>El que quiera Pokemons, que los busque: </h3>
-				<div className='w-100 d-flex'>
-					<input className='input-search' placeholder='Ingrese el nombre a buscar' type="text" />
-					<div className='btn-search-container'>
-						<button className='btn-search'>Buscar</button>
-					</div>
-				</div>
 				<Pokemons />
 			</div>
 		</div>

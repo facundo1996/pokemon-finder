@@ -11,6 +11,7 @@ export default class Pokemons extends React.Component {
 			allPokemons : [],
 			pokemonSelected: [],
 			showAllPokemon: true,
+			pageSelected: 1,
 		}
 		this.searchPokemon = this.searchPokemon.bind(this);
 	}
@@ -35,8 +36,9 @@ export default class Pokemons extends React.Component {
 		}
 	}
 
-	pagination(min,max){
+	pagination(min,max,page){
 		this.setState(({pokemonSelected : this.state.allPokemons.slice(min,max)}))	
+		this.setState(({pageSelected : page}))		
 	}
 
 	async componentDidMount(){
@@ -49,7 +51,7 @@ export default class Pokemons extends React.Component {
 							allPokemons : [...prevState.allPokemons, response]
 						}))
 						this.setState(({pokemonSelected : this.state.allPokemons}))						
-						this.pagination(0,24)
+						this.pagination(0,24,1)
 					})
 		}		
 	}
@@ -69,13 +71,13 @@ export default class Pokemons extends React.Component {
 					})}
 			</div>
 			{this.state.showAllPokemon ? <div className='d-flex w-100 align-items-center justify-content-center mt-5'>
-					<div className='mx-5' onClick={()=>{this.pagination(0,24)}}>1</div>
-					<div className='mx-5' onClick={()=>{this.pagination(24,48)}} >2</div>
-					<div className='mx-5' onClick={()=>{this.pagination(48,72)}}>3</div>
-					<div className='mx-5' onClick={()=>{this.pagination(72,96)}}>4</div>
-					<div className='mx-5' onClick={()=>{this.pagination(96,120)}}>5</div>
-					<div className='mx-5' onClick={()=>{this.pagination(120,144)}}>6</div>
-					<div className='mx-5' onClick={()=>{this.pagination(144,150)}}>7</div>
+					<div id='pagId1' className={this.state.pageSelected==1 ?'mx-3 pagination-number selectPage' :'mx-3 pagination-number'} onClick={()=>{this.pagination(0,24,1,)}}>1</div>
+					<div id='pagId2' className={this.state.pageSelected==2 ?'mx-3 pagination-number selectPage' :'mx-3 pagination-number'} onClick={()=>{this.pagination(24,48,2)}} >2</div>
+					<div id='pagId3' className={this.state.pageSelected==3 ?'mx-3 pagination-number selectPage' :'mx-3 pagination-number'} onClick={()=>{this.pagination(48,72,3)}}>3</div>
+					<div id='pagId4' className={this.state.pageSelected==4 ?'mx-3 pagination-number selectPage' :'mx-3 pagination-number'} onClick={()=>{this.pagination(72,96,4)}}>4</div>
+					<div id='pagId5' className={this.state.pageSelected==5 ?'mx-3 pagination-number selectPage' :'mx-3 pagination-number'} onClick={()=>{this.pagination(96,120,5)}}>5</div>
+					<div id='pagId6' className={this.state.pageSelected==6 ?'mx-3 pagination-number selectPage' :'mx-3 pagination-number'} onClick={()=>{this.pagination(120,144,6)}}>6</div>
+					<div id='pagId7' className={this.state.pageSelected==7 ?'mx-3 pagination-number selectPage' :'mx-3 pagination-number'} onClick={()=>{this.pagination(144,150,7)}}>7</div>
 			</div> :""
 			}
 		</div>

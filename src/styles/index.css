@@ -116,7 +116,31 @@ body {
   background-color: var(--quaternary);
   font-weight: bold;
 }
-.img-pokemon-finder{
-  
 
+.pagination-number{
+  width: 30px;
+  height: 75px;
+  font-size: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transition: transform .2s;
+  color: #41414aa1;
+  background: url('./images/pokeball-close.png') no-repeat;
+  background-size: contain; 
+  background-position: center 30px ;
+}
+.pagination-number:hover{
+  cursor: pointer; 
+  font-weight: bold;
+  transform: scale(1.2);
+  color: #41414ace;
+}
+.selectPage{
+  background: url('./images/pokeball-open.png') no-repeat;
+  background-size: contain; 
+  background-position: center 30px ;
+  font-weight: bold;
+  scale: 1.2;
+  color: black;
 }

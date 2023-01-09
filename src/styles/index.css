@@ -144,3 +144,22 @@ body {
   scale: 1.2;
   color: black;
 }
+
+@media (max-width: 767.98px) { 
+  .img-pokemon-finder{
+    width: 100%;
+  }
+  .img-pokeball-search-invert{
+    display: none;
+  }
+  .img-pokeball-search{
+    display: none;
+  }
+  .input-search{
+    width: 100%;
+    font-size: 18px;
+  }
+  .subtitle-homepage{
+    font-size: 16px;
+  }
+}

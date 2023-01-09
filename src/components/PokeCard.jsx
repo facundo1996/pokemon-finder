@@ -15,7 +15,7 @@ class PokeCard extends React.Component {
 		let typesPokemon = this.props.pokemon.types.map(pook =>{
 			return pook.type.name
 		})
-		return <div className='col-3 d-flex align-items-center justify-content-center card-container'>
+		return <div className='col-12 col-sm-6 col-md-3 d-flex align-items-center justify-content-center card-container'>
 			<div className='card'>
 				<img className='img-pokemon' src={this.props.pokemon.sprites.front_default} alt="" />
 				<div className='mt-5'>
